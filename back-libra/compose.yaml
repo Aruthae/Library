@@ -9,7 +9,7 @@ services:
       - POSTGRES_USER=aru
       - POSTGRES_PASSWORD=test
     volumes:
-      - library_db=/var/lib/postgresql/data 
+      - library_db:/var/lib/postgresql/data 
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4_container
@@ -20,8 +20,8 @@ services:
       PGADMIN_DEFAULT_EMAIL: "user-name@domain-name.com"
       PGADMIN_DEFAULT_PASSWORD: "strong-password"
     volumes:
-      - pgadmin_data=/var/lib/pgadmin-data
+      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
-  local_pgdata:
-  pgadmin-data:
+  library_db:
+  pgadmin_data:
